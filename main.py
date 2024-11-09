@@ -35,7 +35,12 @@ class ArchiveRecord:
 
 
 cringe = urllib.request.build_opener()
-responses= cringe.open("https://api.privatbank.ua/p24api/exchange_rates?date=01.12.2014")
+
+source="https://api.privatbank.ua/p24api/exchange_rates?date="
+
+source += input("Enter the date in the format (DD.MM.YYYY):")
+
+responses= cringe.open(source)
 
 json_data = responses.read().decode("utf-8")
 data_dict = json.loads(json_data)
@@ -58,10 +63,6 @@ record = ArchiveRecord(
     ]
 )
 
-print(json_data)
-print()
 
-print(record)
-print()
 
 record.Show()
