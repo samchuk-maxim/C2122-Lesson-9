@@ -1,9 +1,3 @@
-import json
-from datetime import datetime
-from http.client import responses
-
-
-
 print("Lesson 9")
 
 import urllib.request
